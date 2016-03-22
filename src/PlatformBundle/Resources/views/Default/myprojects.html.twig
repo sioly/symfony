@@ -1,0 +1,19 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+	<h1 class="text-center">Mes projets</h1>
+	<div class="col-md-12">
+		{% for project in listProjects %}
+			{% if project.idAuthor == user.id %}
+				<a href="project/{{project.id}}">
+					<div class="project col-md-3">
+						<h1 class="text-center">
+							{{ project.name }}
+						</h1>
+						<div class="desc ellipsis">{{ project.description }}</div>
+					</div>
+				</a>
+			{% endif %}
+		{% endfor %}
+	</div>
+{% endblock %}

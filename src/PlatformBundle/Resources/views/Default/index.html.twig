@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+
+    {% for flash_message in app.session.flashbag.get('notice') %}
+        <div class="flash-notice text-center">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+
+	{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+		<h1 class="text-center">Liste des projets</h1>
+		<div class="col-md-12">
+		{% for project in listProjects %}
+			<a href="project/{{project.id}}">
+				<div class="project col-md-3">
+					<h1 class="text-center">
+						{{ project.name }}
+					</h1>
+					<div class="desc ellipsis">{{ project.description }}</div>
+				</div>
+			</a>
+		{% endfor %}
+		</div>
+	{% else %}
+		Veuillez vous connectez
+	{% endif %}
+{% endblock %}

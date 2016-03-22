@@ -1,0 +1,154 @@
+body{
+	margin:0;
+	padding:0;
+}
+
+a{
+	text-decoration:none;
+}
+
+li{
+	list-style:none;
+	padding:2px;
+}
+/* HEADER LAYOUT */
+
+#header{
+	margin-bottom:100px;
+}
+
+#header .navbar a{
+	color:white;
+	padding-top:15px;
+	display:inline-block;
+	margin-left:10px;
+}
+
+#header .logout{
+	float:right;
+	margin-right:10px;
+}
+
+/* DESIGN DES PROJETS ET SOUS PROJETS */
+
+.project{
+	transition:0.5s;
+	background:rgba(0,0,0,0.3);
+	border:1px solid silver;
+	margin-bottom:2%;
+	margin-left:5.5%;
+	padding:1%;
+	border-radius:5px;
+}
+
+@media screen and (max-width: 991px) {
+	.project{
+		margin:auto;
+		margin-bottom:3%;
+	}
+}
+
+a .project:hover{
+	transition:0.5s;
+	box-shadow:2px 2px 1px black;
+}
+
+.projectid{
+	background:rgba(0,0,0,0.1);
+	padding:1%;
+	border-radius:5px;
+	width:60%;
+	margin:auto;
+	margin-bottom:1%;
+}
+
+@media screen and (max-width: 991px) {
+	.projectid{
+		width:100%;
+		padding:10px;
+	}
+}
+
+.projectid button{
+	margin-top:1%;
+}
+
+/* DESIGN DES FORMULAIRES */
+
+.form{
+	padding:10px;
+	width:80%;
+	margin:auto;
+}
+
+.form label{
+	display:block;
+	float:left;
+	width:20%;
+	margin-top:20px;
+}
+
+.form input{
+	width:60%;
+	border-radius:5px;
+	padding:5px;
+	margin-top:20px;
+}
+
+@media screen and (max-width: 991px) {
+	.form label{
+		float:none;
+		margin:auto;
+		text-align:center;
+	}
+	.form input{
+		display:block;
+		margin:auto;
+	}
+}
+
+.form button[type="submit"]{
+	padding:15px;
+	border-radius:5px;
+	border:none;
+	display:block;
+	margin:auto;
+	margin-top:30px;
+}
+
+/* DIVERS */
+
+.delete{
+	color:red;
+	float:right;
+}
+
+#addform{
+	display:none;
+}
+
+#adduser{
+	display:none;
+}
+
+.glyphicon{
+	font-size:0.7em;
+}
+
+.desc{
+	width:100%;
+	background:rgba(0,0,0,0.1);
+	padding:10px;
+	border-radius:10px;
+	word-wrap: break-word;
+}
+
+.ellipsis{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow-x: hidden;
+}
+
+.flash-notice{
+    color:green;
+}

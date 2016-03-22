@@ -1,0 +1,51 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+	<div class="col-md-12">
+		{% for subproject in listSubProjects %}
+			{% if subproject.id == id %}
+			<div class="projectid">
+				{% if subproject.idauthor == user.id %}
+					<a href="../deletesubproject/{{subproject.id}}" onclick="return confirm('Are you sure you want to Remove?');" class="delete"><button class="glyphicon glyphicon-remove btn"></button></a>
+				{% endif %}
+				<h1 class="text-center">
+					{{ subproject.name }}
+					{% if subproject.idauthor == user.id %}
+						<a href="../editsubproject/{{subproject.id}}"><span class="glyphicon glyphicon-edit"></span></a>
+					{% endif %}
+				</h1>
+				<div class="desc">{{ subproject.description }}</div>
+				<div>
+					Personnes inscrites au projet :
+					<ul>
+					{% for user in listUser %}
+						{% for users in listUsers %}
+							{% if users.idSubProject == subproject.id %}
+								{% if users.idUser == user.id %}
+									<li>
+										{{ user.username }}
+										<a href="../deleteusers/{{users.id}}" onclick="return confirm('Are you sure you want to Remove?');" ><button class="glyphicon glyphicon-remove"></button></a>
+									</li>
+								{% endif %}
+							{% endif %}
+						{% endfor %}
+					{% endfor %}
+					</ul>
+				</div>
+				<button onclick="addUser()" class="btn btn-success" title="Ajouter un membre au projet">
+					<span class="glyphicon glyphicon-user"></span> Nouvel utilisateur
+				</button>
+				<div id="adduser">
+					<ul>
+						{% for users in listUser %}
+							{% if users.id != user.id %}
+								<li><a href="../addusersubproject/{{subproject.id}}/{{users.id}}"/>{{ users.username }}</a></li>
+							{% endif %}
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+{% endblock %}

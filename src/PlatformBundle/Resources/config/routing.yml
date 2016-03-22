@@ -1,0 +1,47 @@
+platform_homepage:
+    path:     /
+    defaults: { _controller: PlatformBundle:Default:index }
+
+platform_project:
+    path:     /project/{id}
+    defaults: { _controller: PlatformBundle:Default:project }
+
+platform_myprojects:
+    path:     /myprojects
+    defaults: { _controller: PlatformBundle:Default:myprojects }
+
+platform_subproject:
+    path:     /subproject/{id}
+    defaults: { _controller: PlatformBundle:Default:subproject }
+
+platform_addproject:
+    path:     /addproject
+    defaults: { _controller: PlatformBundle:Default:addproject }
+
+platform_adduserproject:
+    path:     /adduserproject/{idProject}/{idUser}
+    defaults: { _controller: PlatformBundle:Default:adduserproject }
+
+platform_addusersubproject:
+    path:     /addusersubproject/{idSubProject}/{idUser}
+    defaults: { _controller: PlatformBundle:Default:addusersubproject }
+
+platform_editproject:
+    path:     /editproject/{id}
+    defaults: { _controller: PlatformBundle:Default:editproject }
+
+platform_editsubproject:
+    path:     /editsubproject/{id}
+    defaults: { _controller: PlatformBundle:Default:editsubproject }
+
+platform_deleteproject:
+    path:     /deleteproject/{id}
+    defaults: { _controller: PlatformBundle:Default:deleteproject }
+
+platform_deletesubproject:
+    path:     /deletesubproject/{id}
+    defaults: { _controller: PlatformBundle:Default:deletesubproject }
+
+platform_test:
+    path:     /deleteusers/{id}
+    defaults: { _controller: PlatformBundle:Default:deleteusers }
